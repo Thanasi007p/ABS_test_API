@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Kite Me</title>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery.kiteContact.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.contact').kiteContact({
+                statusImages:{
+                    'online'        : './images/presence/online-1.jpg',
+                    'offline'       : './images/presence/offline.jpg',
+                    'talking'       : './images/presence/talking.jpg',
+                    'ringing'       : './images/presence/ringing-now.gif',
+                    'away'          : './images/presence/away.jpg',
+                    'away-offline'  : './images/presence/awayoffline.jpg',
+                    'dnd'           : './images/presence/dnd.jpg',
+                    'dnd-offline'   : './images/presence/dndoffline.jpg'
+            }
+        });
+    });
+</script>
+
+<style>
+
+<!--
+.avatar {
+    width:100px;
+    height:100px;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.call {
+    width:100px;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.presence {
+    width:100px!important ;
+}
+
+.job-title {
+    font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px!important;
+	font-weight:100;
+	font-style: oblique;
+		color: #003366;
+}
+.full-name {
+    font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px!important;
+	font-weight:600;
+	color: #5e5e5e;
+	line-height: 2;
+
+}
+
+-->
+</style>
+</head>
+
+
+<BODY LANG="EN" DIR="LTR">
+<!-- EXAMPLE WITH SINGLE USER --> 
+
+<div id="user1">
+<table class="contact" extension="103" serial="absys-cloud-sk" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
+   
+<!-- Substitute values in "extension" and "serial" ("serial" must be PBX name) -->
+
+<tr>
+        <td><p align="center">
+<span class="full-name">Full Name </span><br/>
+<span class="job-title">Job title </span></p>
+
+<!-- Substitute the values in "full-name" and "job-title" with your Full name and Job title-->
+
+</td>
+</tr>
+<tr>
+        <td style="padding-right:10px; padding-left:10px;" class="avatar" align="center">
+            
+        <a href="javascript:void(0)"><img src="images/default-avatar.png" alt="avatar" align="middle" width="100"/></a>
+        
+        </td>
+        </tr>
+        <tr>
+        <td align="center"><img src="images/presence/offline.jpg" class="presence" align="middle" /></td>
+        </tr>
+        <td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100" /></a></td>
+      </tr>
+</table>
+<br/>
+
+
+<!-- EXAMPLE WITH CALL GROUP --> 
+<div id="group1">
+<table class="contact" extension="81" serial="ucit" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
+   
+<!-- Substitute values in "extension" and "serial" ("extension" with call group ID; "serial" must be PBX name) -->
+
+<tr>
+        <td><p align="center">
+<span class="full-name">Help desk </span><br/>
+
+<!-- Substitute the value in "full-name" with your department name-->
+
+</td>
+</tr>
+<tr>
+        <td style="padding-right:10px; padding-left:10px;" align="center">
+            
+        <a href="javascript:void(0)"><img src="images/helpdesk.jpg" alt="team-picture" align="middle" width="100"/></a>
+        
+        </td>
+        </tr>
+
+        <td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100" /></a></td>
+      </tr>
+</table>
+
+
+</BODY>
+</HTML>
+

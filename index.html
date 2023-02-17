@@ -1,351 +1,174 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Kite Me</title>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Contact Page | by Wildix</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">   
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery.kiteContact.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+        		$('.contact').kiteContact({
+                		statusImages:{
+               				'online'        : './images/presence/online-1.jpg',
+					'offline'       : './images/presence/offline.jpg',
+                			'talking'       : './images/presence/talking.jpg',
+					'ringing'       : './images/presence/ringing-now.gif',
+					'away'          : './images/presence/away.jpg',
+					'away-offline'  : './images/presence/awayoffline.jpg',
+					'dnd'           : './images/presence/dnd.jpg',
+					'dnd-offline'   : './images/presence/dndoffline.jpg'
+            
+				}
+        
+			});
+    
+		});
 
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery.kiteContact.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.contact').kiteContact({
-                statusImages:{
-                    'online'        : './images/presence/online-1.jpg',
-                    'offline'       : './images/presence/offline.jpg',
-                    'talking'       : './images/presence/talking.jpg',
-                    'ringing'       : './images/presence/ringing-now.gif',
-                    'away'          : './images/presence/away.jpg',
-                    'away-offline'  : './images/presence/awayoffline.jpg',
-                    'dnd'           : './images/presence/dnd.jpg',
-                    'dnd-offline'   : './images/presence/dndoffline.jpg'
-            }
-        });
-    });
-</script>
-
-<style>
-
-<!--
-.avatar {
-    width:100px;
-    height:100px;
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.call {
-    width:100px;
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.presence {
-    width:100px!important ;
-}
-
-.job-title {
-    font-family: Verdana, Geneva, sans-serif;
-	font-size: 12px!important;
-	font-weight:100;
-	font-style: oblique;
-		color: #003366;
-}
-.full-name {
-    font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px!important;
-	font-weight:600;
-	color: #5e5e5e;
-	line-height: 2;
-
-}
-
--->
-
-/*{border:1px solid red;}*/
-
-html, body {
-	height:100vh;
-	padding:0;
-	margin:0;
-	border-radius:25px;
-}
-html {
-	background-color:#fff;	
-}
-
-body {
-	width:100%;
-	margin:0;
-	padding: 0;
-	background-color: #fff;
-}
-.containerone {
-	height:6%;
-	column-width:auto;
-	margin: 0;
-	background:#fff;
-	padding: 0;
-	overflow:hidden;
-	font-size:100%;
-	border: none;
-	overflow: hidden;
-	align: center;
-}
-.container-center {
-	height:100%;
-	width:100vw;
-	margin:0;
-	padding:0;
-	display:inline-block;
-	text-align:center;
-}
-p.title {	
-	font-size: 4vh;
-	color: #5e5e5e;
-}
-p.title:hover {
-	background-color:#003366;
-	color: #fff;
-}
-/*.containerone, i {
-	font-size: 35px !important;
-	color:#003366;
-	text-align:center;
-	background: #fff;
-	width:auto;
-	overflow: hidden;
-}*/
-.left-col
-{
-	position: relative;
-	float: left;
-	margin-top:.5px;
-	height:100%;
-	width: 100%;
-	padding: 0;
-	display:inline-block;
-	border: none;
-	text-align: center;
-}
-.contacts-page {
-	height: 100%;
-	width: 100%;
-}
-span.fa.fa-search {
-	font-size: 3vh;
-}
-.search {
-	width:100%;
-	height:5vh;
-	background:#fff;
-	position: relative;
-	box-sizing: border-box;
-}
-form.searchbox {
-	width:90%;
-	height:5vh;
-	display: none;
-	margin: 0;
-	border: none;
-}
-form.searchbox input[type=text], input.search-input {
-  padding: 0 20px 0 12px;
-  font-size: 100%;
-  border: 1px solid grey;
-  float: left;
-  width: 40%;
-  height:3vh;
-  background: #fff;
-  margin: 8px 0 0 20px;
-  border-radius: 25px;
-  display: inline-block;
-}
-form.searchbox button, form.search-button{
-  float: left;
-  width: 10vw;
-  padding: 0;
-  background: #fff;
-  color: #5e5e5e;
-  font-size: auto;
-  border: 1px solid grey;
-  border: none;
-  cursor: pointer;
-}
-form.searchbox button:hover {
-  background: #0b7dda;
-}
-.search-button {
-	margin: 0 0 0 10px;
-	background-color: #fff;
-	color: #5e5e5e;
-	border: none;
-	cursor: pointer;
-	float: left;
-	height: 100%;
-}
-.search-button span:hover {
-	background: #0b7dda;
-}
-form.searchbox::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.group {
-	display: inline-block;
-	position: relative;
-	float: none;
-	margin: 0 50px 0 0;
-	padding: 5;
-	border: none;
-}
-.contacts-bottom {
-	height: 100%;
-	width: 100vw;
-	border: none;
-	padding: 0;
-	margin: 0;
-}
-.contacts {
-	width: 100%;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-}
-.user1 {
-	display: inline-block;
-	position: relative;
-	float: none;
-	margin: 0;
-	padding: 20px;
-	border: none;
-}
-.avatar {
-	width:100px;
-	height:100px;
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.call {
-	width:100px;
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-.presence {
-	width:100px!important ;
-}
-.job-title {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 12px!important;
-	font-weight:100;
-	font-style: oblique;
-	color: #003366;
-}
-.full-name {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px!important;
-	font-weight:600;
-	color: #5e5e5e;
-	line-height: 2;
-}
-.refresh {
-	display:inline-block; 
-	border:none; 
-	background:#fff; 
-	color:#5e5e5e; 
-	float:right;  
-	height:100%; 
-	margin:0 20px 0 0;
-}
-span.fa.fa-refresh {
-	font-size: 3vh;
-}
-.title {
-	height: 100%;
-	margin: 0;
-	font-size: 30px;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-p {
-	padding: 0;
-	margin: 0;
-}
-
-
-</style>
+	</script>
 </head>
 
 
-<BODY LANG="EN" DIR="LTR">
-<!-- EXAMPLE WITH SINGLE USER --> 
+<body lang="EN" dir="LTR" style="">
 
-<div id="user1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Call Groups</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+<script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery.kiteContact.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.contact').kiteContact({
+statusImages:{
+'online'        : './images/presence/online-1.jpg',
+'offline'       : './images/presence/offline.jpg',
+'talking'       : './images/presence/talking.jpg',
+'ringing'       : './images/presence/ringing-now.gif',
+'away'          : './images/presence/away.jpg',
+'away-offline'  : './images/presence/awayoffline.jpg',
+'dnd'           : './images/presence/dnd.jpg',
+'dnd-offline'   : './images/presence/dndoffline.jpg'
+}
+});
+});
+</script>
+
+
+
+				</div>
+				<div class="contacts-bottom">
+				<!--ul class="contacts" id="group2"-->
+					
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Kite Me</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+<script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://kite.wildix.com/pages/contacts/js/jquery.kiteContact.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.contact').kiteContact({
+statusImages:{
+'online'        : './images/presence/online-1.jpg',
+'offline'       : './images/presence/offline.jpg',
+'talking'       : './images/presence/talking.jpg',
+'ringing'       : './images/presence/ringing-now.gif',
+'away'          : './images/presence/away.jpg',
+'away-offline'  : './images/presence/awayoffline.jpg',
+'dnd'           : './images/presence/dnd.jpg',
+'dnd-offline'   : './images/presence/dndoffline.jpg'
+}
+});
+});
+</script>
+
+<div class="user1">
 <table class="contact" extension="103" serial="absys-cloud-sk" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
-   
-<!-- Substitute values in "extension" and "serial" ("serial" must be PBX name) -->
-
-<tr>
-        <td><p align="center">
-<span class="full-name">Full Name </span><br/>
-<span class="job-title">Job title </span></p>
-
-<!-- Substitute the values in "full-name" and "job-title" with your Full name and Job title-->
-
+<tbody><tr>
+<td>
+<p align="center">
+<span class="full-name">Andrew Johnston </span><br><span class="job-title">Service</span></p>
 </td>
 </tr>
 <tr>
-        <td style="padding-right:10px; padding-left:10px;" class="avatar" align="center">
-            
-        <a href="javascript:void(0)"><img src="images/default-avatar.png" alt="avatar" align="middle" width="100"/></a>
-        
-        </td>
-        </tr>
-        <tr>
-        <td align="center"><img src="images/presence/offline.jpg" class="presence" align="middle" /></td>
-        </tr>
-        <td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100" /></a></td>
-      </tr>
-</table>
-<br/>
-
-
-<!-- EXAMPLE WITH CALL GROUP --> 
-<div id="group1">
-<table class="contact" extension="81" serial="ucit" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
-   
-<!-- Substitute values in "extension" and "serial" ("extension" with call group ID; "serial" must be PBX name) -->
-
-<tr>
-        <td><p align="center">
-<span class="full-name">Help desk </span><br/>
-
-<!-- Substitute the value in "full-name" with your department name-->
-
+<td class="avatar" align="center">
+<a href="javascript:void(0)"><img src="https://kite.wildix.com/absys-cloud-sk/103/api/avatar" alt="avatar" align="middle" width="100"></a>
 </td>
 </tr>
 <tr>
-        <td style="padding-right:10px; padding-left:10px;" align="center">
-            
-        <a href="javascript:void(0)"><img src="images/helpdesk.jpg" alt="team-picture" align="middle" width="100"/></a>
-        
-        </td>
-        </tr>
+ <td align="center"><img src="./images/presence/online-1.jpg" class="presence" align="middle"></td>
+</tr>
+<tr><td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100"></a></td>
+</tr>
+</tbody></table>
+</div><div class="user1">
+<table class="contact" extension="106" serial="absys-cloud-sk" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
+<tbody><tr>
+<td>
+<p align="center">
+<span class="full-name">Mike Burnett </span><br><span class="job-title">Sales</span></p>
+</td>
+</tr>
+<tr>
+<td class="avatar" align="center">
+<a href="javascript:void(0)"><img src="https://kite.wildix.com/absys-cloud-sk/106/api/avatar" alt="avatar" align="middle" width="100"></a>
+</td>
+</tr>
+<tr>
+ <td align="center"><img src="./images/presence/online-1.jpg" class="presence" align="middle"></td>
+</tr>
+<tr><td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100"></a></td>
+</tr>
+</tbody></table>
+</div><div class="user1">
+<table class="contact" extension="105" serial="absys-cloud-sk" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
+<tbody><tr>
+<td>
+<p align="center">
+<span class="full-name">Jason Lowenberg </span><br><span class="job-title">Sales</span></p>
+</td>
+</tr>
+<tr>
+<td class="avatar" align="center">
+<a href="javascript:void(0)"><img src="https://kite.wildix.com/absys-cloud-sk/105/api/avatar" alt="avatar" align="middle" width="100"></a>
+</td>
+</tr>
+<tr>
+ <td align="center"><img src="./images/presence/offline.jpg" class="presence" align="middle"></td>
+</tr>
+<tr><td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100"></a></td>
+</tr>
+</tbody></table>
+</div><div class="user1">
+<table class="contact" extension="104" serial="absys-cloud-sk" bgcolor="#FBFBFB" border="0" cellspacing="5" cellpadding="0">
+<tbody><tr>
+<td>
+<p align="center">
+<span class="full-name">Jordan Wood </span><br><span class="job-title">Sales</span></p>
+</td>
+</tr>
+<tr>
+<td class="avatar" align="center">
+<a href="javascript:void(0)"><img src="https://kite.wildix.com/absys-cloud-sk/104/api/avatar" alt="avatar" align="middle" width="100"></a>
+</td>
+</tr>
+<tr>
+ <td align="center"><img src="./images/presence/online-1.jpg" class="presence" align="middle"></td>
+</tr>
+<tr><td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100"></a></td>
+</tr>
+</tbody></table>
+</div>
+</div>
 
-        <td class="call" align="center"><a href="javascript:void(0)"><img src="images/contactme.png" alt="kite-chat" width="100" /></a></td>
-      </tr>
-</table>
-
-
-</BODY>
-</HTML>
-
+</body></html>
